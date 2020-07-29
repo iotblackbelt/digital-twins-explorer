@@ -211,8 +211,9 @@ Clicking the settings cog in the top right corner allows the configuration of th
 If you want to use custom icons for the nodes, you can add a .png file in the `client/src/assets/icons` folder with a name reflecting the twin model ID. If no file is present the viewer will show the standard node representation.
 
 * Example: if the twin model ID is `dtmi:example:grid:transmission:powerLine;1` the name of the PNG file needs to be `dtmi_example_grid_transmission_powerLine_1.png`.
+![Image of adt-explorer with icons](./media/adt-explorer-icons.png)
 
-THis repro contains a icon file for the models used in the digital twin example provided here.
+This repro contains a icon file for the models used in the digital twin example provided here. If you run the example using thsi repo you will see the custom icons in your digital twin.
 
 ## Known Limitations
 
