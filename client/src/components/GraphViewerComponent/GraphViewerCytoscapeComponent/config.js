@@ -21,11 +21,13 @@ export const graphStyles = [ // the stylesheet for the graph
   {
     selector: "node",
     style: {
-      "width": "20px",
-      "height": "20px",
-      "background-color": "#666",
+      "width": "30px",
+      "height": "30px",
+      "background-color": "#000",
+      "background-repeat": "no-repeat",
+      "background-fit": "cover cover",
       "label": "data(id)",
-      "border-color": "#ccc",
+      "border-color": "#000",
       "border-width": 2,
       "color": "#ccc",
       "font-size": "10px",

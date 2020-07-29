@@ -14,6 +14,7 @@ import { colors, graphStyles, dagreOptions, colaOptions, klayOptions, fcoseOptio
 import { getUniqueRelationshipId } from "../../../utils/utilities";
 
 import "./GraphViewerCytoscapeComponent.scss";
+var ModelImages = require.context('../../../assets/icons', true);
 
 cytoscape.use(klay);
 cytoscape.use(dagre);
@@ -119,6 +120,7 @@ export class GraphViewerCytoscapeComponent extends React.Component {
     cy.batch(() => {
       const types = {};
       const mtypes = {};
+      const mtypesimages = {};
       const el = cy.nodes("*");
 
       // Color by type attribute
@@ -129,12 +131,23 @@ export class GraphViewerCytoscapeComponent extends React.Component {
         cy.elements(`node[type="${t}"]`).style("background-color", types[t]);
       }
 
-      // Color by model type
+      
+      // Color or image by model type
       for (let i = 0; i < el.length; i++) {
-        mtypes[el[i].data("modelId")] = `#${this.getColor(i)}`;
+        var modelId = el[i].data("modelId");
+        mtypes[modelId] = `#${this.getColor(i)}`;
       }
       for (const t of Object.keys(mtypes)) {
-        cy.elements(`node[modelId="${t}"]`).style("background-color", mtypes[t]);
+        var model = t.replace(/:/g, "_").replace(/;/g, "_");
+        var icon = "";
+        try {
+          icon = ModelImages(`./${model}.png`);
+          cy.elements(`node[modelId="${t}"]`).style("background-image", icon);
+          cy.elements(`node[modelId="${t}"]`).style("shape", "square");
+        }
+        catch (err) {
+          cy.elements(`node[modelId="${t}"]`).style("background-color", mtypes[t]);
+        }
       }
     });
 

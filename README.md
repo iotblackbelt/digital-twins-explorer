@@ -206,6 +206,14 @@ Clicking the settings cog in the top right corner allows the configuration of th
 1. Number of layers to expand: when double clicking on a node, this number indicates how many layers of relationships to fetch.
 1. Expansion direction: when double clicking on a node, this indicates which kinds of relationships to follow when expanding.
 
+### Custom icons
+
+If you want to use custom icons for the nodes, you can add a .png file in the `client/src/assets/icons` folder with a name reflecting the twin model ID. If no file is present the viewer will show the standard node representation.
+
+* Example: if the twin model ID is `dtmi:example:grid:transmission:powerLine;1` the name of the PNG file needs to be `dtmi_example_grid_transmission_powerLine_1.png`.
+
+THis repro contains a icon file for the models used in the digital twin example provided here.
+
 ## Known Limitations
 
 * adt-explorer does not currently handle complex properties or components defined in twins well. You can create or visualize twins using these features, but you may not be able to view or edit their properties
