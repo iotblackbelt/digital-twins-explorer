@@ -214,7 +214,7 @@ If you want to use custom icons for the nodes, you can add a .png file in the `c
 
 ![Image of adt-explorer with icons](./media/adt-explorer-icons.png)
 
-This repro contains an icon file for the models used in the digital twin example provided here. If you run the example using thsi repo you will see the custom icons in your digital twin.
+This repro contains an icon file for the models used in the digital twin example provided here. If you run the example using this repo you will see the custom icons in your digital twin.
 
 ## Known Limitations
 

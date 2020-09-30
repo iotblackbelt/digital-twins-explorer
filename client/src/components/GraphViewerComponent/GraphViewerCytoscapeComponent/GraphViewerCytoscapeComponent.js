@@ -120,7 +120,6 @@ export class GraphViewerCytoscapeComponent extends React.Component {
     cy.batch(() => {
       const types = {};
       const mtypes = {};
-      const mtypesimages = {};
       const el = cy.nodes("*");
 
       // Color by type attribute
@@ -133,6 +132,7 @@ export class GraphViewerCytoscapeComponent extends React.Component {
 
       
       // Color or image by model type
+      // Image needs to be a .png file and be named based on the twin model id.
       for (let i = 0; i < el.length; i++) {
         var modelId = el[i].data("modelId");
         mtypes[modelId] = `#${this.getColor(i)}`;
